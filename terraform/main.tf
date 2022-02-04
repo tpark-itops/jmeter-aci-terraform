@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
 data "azurerm_container_registry" "jmeter_acr" {
   name                = var.JMETER_ACR_NAME
   resource_group_name = var.JMETER_ACR_RESOURCE_GROUP_NAME
